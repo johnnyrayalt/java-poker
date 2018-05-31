@@ -130,8 +130,7 @@ public class PokerTest {
         newHand.add("5 of Hearts");
         poker.setPlayersHand(newHand);
         System.out.println(newHand);
-        poker.checkHighestCard();
-        assertEquals("9 of Hearts", poker.checkHighestCard());
+        assertEquals(9, poker.checkHighestCard("player"));
     }
 
     @After
