@@ -1,0 +1,16 @@
+{{#partial "content"}}
+
+    <p>your hand</p>
+
+        <ul>
+    {{#each poker.playersHand}}
+            <li>{{this}}</li>
+    {{/each}}
+        </ul>
+
+    <p>Did ya win?</p>
+    <a href="/poker/win">Click me!</a>
+
+{{/partial}}
+
+{{> layout.hbs}}

@@ -133,6 +133,20 @@ public class PokerTest {
         assertEquals(9, poker.checkHighestCard("player"));
     }
 
+    @Test
+    public void checkHighestCard_twoAces_isTrue() {
+        Poker poker = setNewPoker();
+        List<String> newHand = new ArrayList<>();
+        newHand.add("3 of clubs");
+        newHand.add("2 of Hearts");
+        newHand.add("5 of Hearts");
+        newHand.add("Ace of Hearts");
+        newHand.add("Ace of Hearts");
+        poker.setPlayersHand(newHand);
+        System.out.println(newHand);
+        assertEquals(14, poker.checkHighestCard("player"));
+    }
+
     @After
     public void tearDown() throws Exception {
     }

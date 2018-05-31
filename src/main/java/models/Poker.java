@@ -1,7 +1,4 @@
 package models;
-
-import sun.tools.tree.ShiftRightExpression;
-
 import java.util.*;
 
 public class Poker {
@@ -50,6 +47,12 @@ public class Poker {
 
      public void setDealersHand(List<String> newHand) {
         dealersHand = newHand;
+     }
+
+     public void clearHands() {
+        playersHand.clear();
+        dealersHand.clear();
+        deck.clear();
      }
 
      public void createDeck() {
@@ -117,11 +120,11 @@ public class Poker {
         int i = 0;
 
         while (i<4) {
-            if (cardList.get(handValues.get(i)) > cardList.get(handValues.get(i+1)) && cardList.get(handValues.get(i)) > cardList.get(handValues.get(highestValueCardPosition))) {
+            if (cardList.get(handValues.get(i)) > cardList.get(handValues.get(i+1)) || cardList.get(handValues.get(i)) > cardList.get(handValues.get(highestValueCardPosition))) {
                 highestValueCardPosition = i;
                 }
             if (i==3) {
-                if (cardList.get(handValues.get(i)) < cardList.get(handValues.get(i+1)) && cardList.get(handValues.get(i+1)) > cardList.get(handValues.get(highestValueCardPosition))) {
+                if (cardList.get(handValues.get(i)) < cardList.get(handValues.get(i+1)) || cardList.get(handValues.get(i+1)) > cardList.get(handValues.get(highestValueCardPosition))) {
                     highestValueCardPosition = i+1;
                 }
             }
@@ -129,6 +132,5 @@ public class Poker {
         }
         return cardList.get(handValues.get(highestValueCardPosition));
     }
-
 
 }

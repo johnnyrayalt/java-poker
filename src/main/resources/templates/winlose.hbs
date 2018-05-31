@@ -1,0 +1,22 @@
+{{#partial "content"}}
+
+    {{#if win}}
+        <p>{{win}}</p>
+    {{else}}
+        <p>{{lose}}</p>
+    {{/if}}
+
+    <div class="row">
+        <div class="col-md-6">
+            <h3>Your high card was: {{playerHighCard}}</h3>
+        </div>
+        <div class="col-md-6">
+            <h3>The dealer's high card was: {{dealerHighCard}}</h3>
+        </div>
+
+    </div>
+    <h3><a href="/poker/new">Play again?</a> </h3>
+
+{{/partial}}
+
+{{> layout.hbs}}
